@@ -13,6 +13,13 @@
 		C032A87326D9208D00F0DC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C032A87126D9208D00F0DC5E /* Main.storyboard */; };
 		C032A87526D9208F00F0DC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C032A87426D9208F00F0DC5E /* Assets.xcassets */; };
 		C032A87826D9208F00F0DC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C032A87626D9208F00F0DC5E /* LaunchScreen.storyboard */; };
+		C032A88326D9213200F0DC5E /* Scene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C032A88226D9213200F0DC5E /* Scene1.sks */; };
+		C032A88526D9214900F0DC5E /* Scene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032A88426D9214900F0DC5E /* Scene1.swift */; };
+		C032A88726D9215100F0DC5E /* Scene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C032A88626D9215100F0DC5E /* Scene2.sks */; };
+		C032A88926D9215700F0DC5E /* Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032A88826D9215700F0DC5E /* Scene2.swift */; };
+		C032A88B26D9248700F0DC5E /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032A88A26D9248700F0DC5E /* Transition.swift */; };
+		C032A88F26D926C300F0DC5E /* SKScene+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032A88E26D926C300F0DC5E /* SKScene+.swift */; };
+		C032A89126D9282600F0DC5E /* SKNode+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032A89026D9282600F0DC5E /* SKNode+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		C032A87426D9208F00F0DC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C032A87726D9208F00F0DC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C032A87926D9208F00F0DC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C032A88226D9213200F0DC5E /* Scene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene1.sks; sourceTree = "<group>"; };
+		C032A88426D9214900F0DC5E /* Scene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene1.swift; sourceTree = "<group>"; };
+		C032A88626D9215100F0DC5E /* Scene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene2.sks; sourceTree = "<group>"; };
+		C032A88826D9215700F0DC5E /* Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene2.swift; sourceTree = "<group>"; };
+		C032A88A26D9248700F0DC5E /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		C032A88E26D926C300F0DC5E /* SKScene+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+.swift"; sourceTree = "<group>"; };
+		C032A89026D9282600F0DC5E /* SKNode+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,62 @@
 		C032A86A26D9208D00F0DC5E /* scene-transition-test */ = {
 			isa = PBXGroup;
 			children = (
+				C032A88D26D924B100F0DC5E /* Transition */,
+				C032A88C26D924AD00F0DC5E /* VCs */,
+				C032A87F26D9210F00F0DC5E /* Scenes */,
 				C032A86B26D9208D00F0DC5E /* AppDelegate.swift */,
 				C032A86D26D9208D00F0DC5E /* SceneDelegate.swift */,
-				C032A86F26D9208D00F0DC5E /* ViewController.swift */,
 				C032A87126D9208D00F0DC5E /* Main.storyboard */,
 				C032A87426D9208F00F0DC5E /* Assets.xcassets */,
 				C032A87626D9208F00F0DC5E /* LaunchScreen.storyboard */,
 				C032A87926D9208F00F0DC5E /* Info.plist */,
 			);
 			path = "scene-transition-test";
+			sourceTree = "<group>";
+		};
+		C032A87F26D9210F00F0DC5E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C032A88026D9211400F0DC5E /* Scene 1 */,
+				C032A88126D9211C00F0DC5E /* Scene 2 */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C032A88026D9211400F0DC5E /* Scene 1 */ = {
+			isa = PBXGroup;
+			children = (
+				C032A88226D9213200F0DC5E /* Scene1.sks */,
+				C032A88426D9214900F0DC5E /* Scene1.swift */,
+			);
+			path = "Scene 1";
+			sourceTree = "<group>";
+		};
+		C032A88126D9211C00F0DC5E /* Scene 2 */ = {
+			isa = PBXGroup;
+			children = (
+				C032A88626D9215100F0DC5E /* Scene2.sks */,
+				C032A88826D9215700F0DC5E /* Scene2.swift */,
+			);
+			path = "Scene 2";
+			sourceTree = "<group>";
+		};
+		C032A88C26D924AD00F0DC5E /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				C032A86F26D9208D00F0DC5E /* ViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		C032A88D26D924B100F0DC5E /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				C032A88A26D9248700F0DC5E /* Transition.swift */,
+				C032A88E26D926C300F0DC5E /* SKScene+.swift */,
+				C032A89026D9282600F0DC5E /* SKNode+.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +185,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C032A88326D9213200F0DC5E /* Scene1.sks in Resources */,
+				C032A88726D9215100F0DC5E /* Scene2.sks in Resources */,
 				C032A87826D9208F00F0DC5E /* LaunchScreen.storyboard in Resources */,
 				C032A87526D9208F00F0DC5E /* Assets.xcassets in Resources */,
 				C032A87326D9208D00F0DC5E /* Main.storyboard in Resources */,
@@ -137,8 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C032A88B26D9248700F0DC5E /* Transition.swift in Sources */,
+				C032A88F26D926C300F0DC5E /* SKScene+.swift in Sources */,
 				C032A87026D9208D00F0DC5E /* ViewController.swift in Sources */,
+				C032A89126D9282600F0DC5E /* SKNode+.swift in Sources */,
 				C032A86C26D9208D00F0DC5E /* AppDelegate.swift in Sources */,
+				C032A88926D9215700F0DC5E /* Scene2.swift in Sources */,
+				C032A88526D9214900F0DC5E /* Scene1.swift in Sources */,
 				C032A86E26D9208D00F0DC5E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
