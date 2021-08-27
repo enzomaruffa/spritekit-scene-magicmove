@@ -18,9 +18,11 @@ extension SKNode {
             
             let colorizeAction = SKAction.colorize(with: otherScene.backgroundColor, colorBlendFactor: 1, duration: duration)
             actions.append(colorizeAction)
+            
+            return SKAction.group(actions)
         }
         
-        // Defaults to every the SKNode
+        // Defaults to every the SKNode except SKScene
         let positionAction = SKAction.move(to: otherNode.position, duration: duration)
         actions.append(positionAction)
         

@@ -48,10 +48,13 @@ extension ViewController: TransitionDelegate {
         let nextScene = getNextScene()
         nextScene.scaleMode = .aspectFit
         
-        currentScene?.transition(to: nextScene, during: 1.5, completion: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+        let delay = 0.05
+        
+        currentScene?.transition(to: nextScene, during: 0.8, firstCompletion: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+                print("Presenting second scene...")
                 self?.skView.presentScene(nextScene)
             }
-        })
+        }, delay: delay, fullCompletion: nil)
     }
 }
