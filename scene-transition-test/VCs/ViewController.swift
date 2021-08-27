@@ -45,9 +45,11 @@ extension ViewController: TransitionDelegate {
         
         transitioning = true
         
+        // Gets the scene we want to transition to
         let nextScene = getNextScene()
         nextScene.scaleMode = .aspectFit
         
+        // Sets the delay between the first part of the transition (moving stuff from the first scene to the second scene) and the second part of the transition (fading in unmatched elements)
         let delay = 0.05
         
         currentScene?.transition(to: nextScene, during: 0.8, firstCompletion: {
@@ -55,6 +57,6 @@ extension ViewController: TransitionDelegate {
                 print("Presenting second scene...")
                 self?.skView.presentScene(nextScene)
             }
-        }, delay: delay, fullCompletion: nil)
+        }, fadeInDelay: delay, fullCompletion: nil)
     }
 }

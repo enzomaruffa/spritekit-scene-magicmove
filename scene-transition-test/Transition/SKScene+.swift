@@ -16,7 +16,7 @@ extension SKScene {
     func transition(to otherScene: SKScene,
                     during duration: Double,
                     firstCompletion: (() -> Void)?,
-                    delay: Double,
+                    fadeInDelay: Double,
                     fullCompletion: (() -> Void)?) {
         let sceneActions = prepareActions(creatingTransitionTo: otherScene, during: duration)
         
@@ -25,9 +25,11 @@ extension SKScene {
             // If a node with the same name is found in the same hierarchy
             if let nodeName = node.name,
                let otherNode = otherScene.childNode(withName: nodeName) {
+                // Then perform all the necessary transitions
                 return (node, node.prepareActions(creatingTransitionTo: otherNode, during: duration))
             } 
                 
+            // Fade out the other elements
             return (node, SKAction.fadeOut(withDuration: duration))
         })
         
@@ -50,14 +52,15 @@ extension SKScene {
             }
             
             // If unmatched, return a fade in
+            let previousAlpha = node.alpha
             node.alpha = 0
-            return (node, SKAction.fadeIn(withDuration: duration / 2))
+            return (node, SKAction.fadeAlpha(to: previousAlpha, duration: duration/2))
         })
         
         // If we need to perform a second transition
         guard allOtherSceneUnmatchedNodeGroups.count > 0  else { return }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + duration + delay) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration + fadeInDelay) {
             // Run the first node separately to trigger the completion
             print("Presenting second scene nodes...")
             let (firstNode, firstAction) = allOtherSceneUnmatchedNodeGroups.removeFirst()

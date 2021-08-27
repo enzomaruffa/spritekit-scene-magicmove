@@ -9,10 +9,11 @@ import SpriteKit
 
 extension SKNode {
     
+    // Prepares the actions to transition the current node to the otherNode
     func prepareActions(creatingTransitionTo otherNode: SKNode, during duration: Double) -> SKAction {
         var actions: [SKAction] = []
         
-        // TODO: Checks for possible downcasts
+        // TODO: Checks for possible downcasts for stuff like SKShapeNodes that have colors
         if let _ = self as? SKScene,
            let otherScene = otherNode as? SKScene {
             
